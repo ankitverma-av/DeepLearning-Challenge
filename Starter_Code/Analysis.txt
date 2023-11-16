@@ -1,0 +1,30 @@
+Analysis Report 
+
+Overview of the analysis: 
+The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures. With your knowledge of machine learning and neural networks, you’ll use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup.
+
+Data Preprocessing
+
+1. What variable(s) are the target(s) for your model?
+Ans: The target for the model  the column "IS_SUCESSFUL".
+
+2. What variable(s) are the features for your model?
+Ans: After standardizing the data set using pd.get_dummies we are left with 43 columns(variables)
+STATUS	ASK_AMT	IS_SUCCESSFUL	APPLICATION_TYPE_Other	APPLICATION_TYPE_T19	APPLICATION_TYPE_T3	APPLICATION_TYPE_T4	APPLICATION_TYPE_T5	APPLICATION_TYPE_T6	APPLICATION_TYPE_T7	...	INCOME_AMT_1-9999	INCOME_AMT_10000-24999	INCOME_AMT_100000-499999	INCOME_AMT_10M-50M	INCOME_AMT_1M-5M	INCOME_AMT_25000-99999	INCOME_AMT_50M+	INCOME_AMT_5M-10M	SPECIAL_CONSIDERATIONS_N	SPECIAL_CONSIDERATIONS_Y
+then i split the data into features which are stored except the "IS_SUCCESSFUL" in y  and target which is stored in x 
+
+
+Compiling, Training, and Evaluating the Model
+
+How many neurons, layers, and activation functions did you select for your neural network model, and why? Were you able to achieve the target model’s performance?
+Initially i had 2 hiddenlayers 
+First layer containing 10 neurons, with "relu" activation function and 42 inputs
+Second Layer contains 12 neurons , with "relu" activation function and inputs from this layer comes from first layer
+The accuracy came with 2 layers came up at to  0.7300291657447815
+
+What steps did you take in your attempts to increase model performance?
+
+To increase the model performance, I increased the cutoff values and i reduced the input variables to 40 and I added one more hidden layer where I used 5 units as as neurons , and used "relu" activation filter and increased the epochs to 70 ,however the model accuracy dipped a little bit which indicates the situation of overfitting
+
+Recommendations: To increase the accuracy i believe we need Exploratory data analysis to see the outliers and remove them, we can also see patterns in data which can help in determine the more efficent data and we can also use the help of keras tuner to determine the hyperparameters automatically which elimnates the guess work upto some extend
+
